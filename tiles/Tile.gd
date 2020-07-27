@@ -8,24 +8,32 @@ var tile_model
 
 func _ready():
 	tile_model = get_node("../" + tile_model_name)
-	set_tile_material("res://tiles/tile_unplanted.material")
+	update_tile_material_from_plant()
 
 func _on_Tile_mouse_entered():
 	is_hovered = true
+	set_tile_material("res://tiles/tile_highlight.material")
 
 func _on_Tile_mouse_exited():
 	is_hovered = false
+	update_tile_material_from_plant()
 
 func _unhandled_input(event):
 	if self.is_hovered and event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+		is_planted = !is_planted
+		
+		update_tile_material_from_plant()
+		
 		if is_planted:
-			$PlantSpawnArea.clear_plants()
-			set_tile_material("res://tiles/tile_unplanted.material")
-			is_planted = false
-		else:
-			set_tile_material("res://tiles/tile_planted.material")
 			$PlantSpawnArea.spawn_plants()
-			is_planted = true
+		else:
+			$PlantSpawnArea.clear_plants()
+
+func update_tile_material_from_plant():
+	if is_planted:
+		set_tile_material("res://tiles/tile_planted.material")
+	else:
+		set_tile_material("res://tiles/tile_unplanted.material")
 
 func set_tile_material(material: String):
 	tile_model.get_child(0).material_override = load(material)

@@ -1,6 +1,6 @@
 extends Spatial
 
-const amount = 40
+const amount = 100
 const rotation_y_range = PI
 const rotation_x_range = 0.2
 const scale_range = 0.2
