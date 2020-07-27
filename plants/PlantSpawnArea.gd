@@ -1,11 +1,17 @@
 extends Spatial
 
+const amount = 40
+const rotation_y_range = PI
+const rotation_x_range = 0.2
+const scale_range = 0.2
+
 var min_x: float
 var max_x: float
 var upper_y_m: float
 var upper_y_c: float
 var lower_y_m: float
 var lower_y_c: float
+
 var rand = RandomNumberGenerator.new()
 
 func _ready():
@@ -23,9 +29,11 @@ func _ready():
 func spawn_plants():
 	var Plant = load("res://plants/grass.glb")
 	
-	for i in range(10):
+	for i in range(amount):
 		var plant = Plant.instance()
 		plant.transform.origin = random_position()
+		plant.rotation = random_rotation()
+		plant.scale = random_scale()
 		add_child(plant)
 	
 func get_slope(A: Position3D, B: Position3D):
@@ -44,3 +52,14 @@ func random_position():
 	var y = rand.randf_range(min_y, max_y)
 	
 	return Vector3(x, 0, y)
+	
+func random_rotation():
+	var rotation_y = rand.randf_range(-rotation_y_range, rotation_y_range)
+	var rotation_x = rand.randf_range(-rotation_x_range, rotation_x_range)
+	
+	return Vector3(rotation_x, rotation_y, 0)
+	
+func random_scale():
+	var scale = rand.randf_range(1-scale_range, 1+scale_range)
+	
+	return Vector3(scale, scale, scale)
