@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tiles/Tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tiles/tile001.glb" type="PackedScene" id=2]
+
+[node name="Tile001" type="Spatial"]
+
+[node name="tile001" parent="." instance=ExtResource( 2 )]
+
+[node name="Tile" parent="." instance=ExtResource( 1 )]
+tile_model_name = "tile001"

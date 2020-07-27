@@ -1,16 +1,65 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://tiles/Tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tiles/Tile001.tscn" type="PackedScene" id=1]
 
 [sub_resource type="Environment" id=1]
 ambient_light_color = Color( 0.996078, 0.992157, 0.992157, 1 )
 
 [node name="Main" type="Spatial"]
 
-[node name="Tile" parent="." instance=ExtResource( 1 )]
-
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.881518, 0.472151, 0, -0.472151, 0.881518, 0, 3.84675, 8.01352 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
+
+[node name="tiles" type="Spatial" parent="."]
+
+[node name="001" type="Spatial" parent="tiles"]
+
+[node name="Tile001" parent="tiles/001" instance=ExtResource( 1 )]
+
+[node name="Tile002" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( 0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, 0, 0, 0 )
+
+[node name="Tile003" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
+
+[node name="Tile004" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( 0.382683, 0, 0.92388, 0, 1, 0, -0.92388, 0, 0.382683, 0, 0, 0 )
+
+[node name="Tile005" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+
+[node name="Tile006" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( -0.382684, 0, 0.92388, 0, 1, 0, -0.92388, 0, -0.382684, 0, 0, 0 )
+
+[node name="Tile007" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0, 0 )
+
+[node name="Tile008" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( -0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, -0.92388, 0, 0, 0 )
+
+[node name="Tile009" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="Tile010" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( -0.923879, 0, -0.382684, 0, 1, 0, 0.382684, 0, -0.923879, 0, 0, 0 )
+
+[node name="Tile011" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, 0, 0 )
+
+[node name="Tile012" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( -0.382683, 0, -0.92388, 0, 1, 0, 0.92388, 0, -0.382683, 0, 0, 0 )
+
+[node name="Tile013" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0 )
+
+[node name="Tile014" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( 0.382684, 0, -0.923879, 0, 1, 0, 0.923879, 0, 0.382684, 0, 0, 0 )
+
+[node name="Tile015" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0 )
+
+[node name="Tile016" parent="tiles/001" instance=ExtResource( 1 )]
+transform = Transform( 0.92388, 0, -0.382683, 0, 1, 0, 0.382683, 0, 0.92388, 0, 0, 0 )

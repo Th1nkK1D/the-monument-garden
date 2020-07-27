@@ -1,9 +1,13 @@
 extends Area
 
+export var tile_model_name: String
+
 var is_hovered := false
 var is_planted := false
+var tile_model
 
 func _ready():
+	tile_model = get_node("../" + tile_model_name)
 	set_tile_material("res://tiles/tile_unplanted.material")
 
 func _on_Tile_mouse_entered():
@@ -24,4 +28,4 @@ func _unhandled_input(event):
 			is_planted = true
 
 func set_tile_material(material: String):
-	$tile001/tile001sliced.material_override = load(material)
+	tile_model.get_child(0).material_override = load(material)
