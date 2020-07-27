@@ -25,7 +25,7 @@ func _ready():
 	lower_y_c = get_y_at_x0($C, lower_y_m)
 	
 func spawn_plants():
-	var Plant = load("res://plants/grass.glb")
+	var Plant = load(GameState.selected_plant)
 	
 	for i in range(amount):
 		var plant = Plant.instance()
