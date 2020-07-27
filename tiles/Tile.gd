@@ -1,14 +1,27 @@
 extends Area
 
 var is_hovered := false
-signal is_clicked
+var is_planted := false
+
+func _ready():
+	set_tile_material("res://tiles/tile_unplanted.material")
 
 func _on_Tile_mouse_entered():
-	self.is_hovered = true
+	is_hovered = true
 
 func _on_Tile_mouse_exited():
-	self.is_hovered = false
+	is_hovered = false
 
 func _unhandled_input(event):
 	if self.is_hovered and event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-		emit_signal("is_clicked")
+		if is_planted:
+			$PlantSpawnArea.clear_plants()
+			set_tile_material("res://tiles/tile_unplanted.material")
+			is_planted = false
+		else:
+			set_tile_material("res://tiles/tile_planted.material")
+			$PlantSpawnArea.spawn_plants()
+			is_planted = true
+
+func set_tile_material(material: String):
+	$tile001/tile001sliced.material_override = load(material)

@@ -24,8 +24,6 @@ func _ready():
 	lower_y_m = get_slope($C, $D)
 	lower_y_c = get_y_at_x0($C, lower_y_m)
 	
-	spawn_plants()
-	
 func spawn_plants():
 	var Plant = load("res://plants/grass.glb")
 	
@@ -34,7 +32,11 @@ func spawn_plants():
 		plant.transform.origin = random_position()
 		plant.rotation = random_rotation()
 		plant.scale = random_scale()
-		add_child(plant)
+		$Plants.add_child(plant)
+
+func clear_plants():
+	for plant in $Plants.get_children():
+		plant.queue_free()
 	
 func get_slope(A: Position3D, B: Position3D):
 	return (B.transform.origin.z - A.transform.origin.z) / (B.transform.origin.x - A.transform.origin.x)
