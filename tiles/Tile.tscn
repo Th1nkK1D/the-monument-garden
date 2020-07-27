@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://tiles/tile001.glb" type="PackedScene" id=1]
 [ext_resource path="res://tiles/Tile.gd" type="Script" id=2]
+[ext_resource path="res://plants/PlantSpawnArea.tscn" type="PackedScene" id=3]
 
 [node name="Tile" type="Area"]
 script = ExtResource( 2 )
@@ -12,5 +13,8 @@ script = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.4, 0 )
 depth = 0.1
 polygon = PoolVector2Array( -2.06435, 0.080169, -1.90401, 0.741564, -2.74579, 1.12237, -2.96625, 0.0400847 )
+
+[node name="PlantSpawnArea" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.977673, 0, 0.21013, 0, 1, 0, -0.21013, 0, 0.977673, -2.41042, 1.38471, 0.502598 )
 [connection signal="mouse_entered" from="." to="." method="_on_Tile_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Tile_mouse_exited"]
