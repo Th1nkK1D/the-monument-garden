@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tiles/Tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tiles/tile003.glb" type="PackedScene" id=2]
+
+[node name="Tile003" type="Spatial"]
+
+[node name="tile003" parent="." instance=ExtResource( 2 )]
+
+[node name="Tile" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97529, -0.245621, 0 )
+tile_model_name = "tile003"
+
+[node name="CollisionPolygon" parent="Tile" index="0"]
+polygon = PoolVector2Array( -2.08084, 0.0490052, -1.99791, 0.73508, -2.88, 0.908483, -2.96625, 0.0400847 )
+
+[node name="PlantSpawnArea" parent="Tile" index="1"]
+transform = Transform( 0.994781, 0, 0.102028, 0, 1, 0, -0.102028, 0, 0.994781, -2.42981, 1.38471, 0.502598 )
+
+[node name="B" parent="Tile/PlantSpawnArea" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, -0.417 )
+
+[node name="C" parent="Tile/PlantSpawnArea" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.372719 )
+
+[node name="D" parent="Tile/PlantSpawnArea" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 0.279 )
+
+[editable path="Tile"]
+
+[editable path="Tile/PlantSpawnArea"]
