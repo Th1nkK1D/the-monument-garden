@@ -3,7 +3,6 @@ extends Area
 export var tile_model_name: String
 
 var is_hovered := false
-var is_planted := false
 var tile_model
 
 func _ready():
@@ -20,17 +19,15 @@ func _on_Tile_mouse_exited():
 
 func _unhandled_input(event):
 	if self.is_hovered and event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-		is_planted = !is_planted
-		
-		update_tile_material_from_plant()
-		
-		if is_planted:
+		if $PlantSpawnArea.current_plant != GameState.selected_plant:
 			$PlantSpawnArea.spawn_plants()
 		else:
 			$PlantSpawnArea.clear_plants()
+		
+		update_tile_material_from_plant()
 
 func update_tile_material_from_plant():
-	if is_planted:
+	if $PlantSpawnArea.current_plant != null:
 		set_tile_material("res://tiles/tile_planted.material")
 	else:
 		set_tile_material("res://tiles/tile_unplanted.material")
