@@ -1,0 +1,46 @@
+Arguments: 
+  /home/lkz/.nvm/versions/node/v12.18.2/bin/node /home/lkz/.nvm/versions/node/v12.18.2/bin/yarn add --dev http-server gp-pages
+
+PATH: 
+  /home/lkz/.nvm/versions/node/v12.18.2/bin:/home/lkz/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.18.2
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/gp-pages: Not found
+      at Request.params.callback [as _callback] (/home/lkz/.nvm/versions/node/v12.18.2/lib/node_modules/yarn/lib/cli.js:66987:18)
+      at Request.self.callback (/home/lkz/.nvm/versions/node/v12.18.2/lib/node_modules/yarn/lib/cli.js:140748:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (/home/lkz/.nvm/versions/node/v12.18.2/lib/node_modules/yarn/lib/cli.js:141720:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (/home/lkz/.nvm/versions/node/v12.18.2/lib/node_modules/yarn/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (_stream_readable.js:1221:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "name": "the-garden-monument",
+    "version": "0.0.1",
+    "main": "project.godot",
+    "repository": "https://github.com/Th1nkK1D/the-monument-garden.git",
+    "author": "Th1nkK1D <witheep@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+      "export": "godot --export HTML5 ./dist/index"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

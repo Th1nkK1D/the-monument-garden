@@ -1,0 +1,17 @@
+{
+  "name": "the-garden-monument",
+  "version": "0.0.1",
+  "main": "project.godot",
+  "repository": "https://github.com/Th1nkK1D/the-monument-garden.git",
+  "author": "Th1nkK1D <witheep@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "export": "godot --export HTML5 ./dist/index",
+    "serve": "http-server dist",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0",
+    "http-server": "^0.12.3"
+  }
+}
