@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://menus/grass.png" type="Texture" id=1]
 [ext_resource path="res://menus/Menu.gd" type="Script" id=2]
 
 [node name="Menu" type="CanvasLayer"]
@@ -16,9 +15,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Grass" type="TextureButton" parent="PlantOptions"]
-margin_right = 102.0
-margin_bottom = 102.0
-texture_normal = ExtResource( 1 )
-stretch_mode = 4
+[node name="Grass" type="Button" parent="PlantOptions"]
+margin_right = 99.0
+margin_bottom = 20.0
+text = "Grass"
+
+[node name="PurpleFlower" type="Button" parent="PlantOptions"]
+margin_top = 24.0
+margin_right = 99.0
+margin_bottom = 44.0
+text = "Purple Flower"
 [connection signal="pressed" from="PlantOptions/Grass" to="." method="_on_Grass_pressed"]
+[connection signal="pressed" from="PlantOptions/PurpleFlower" to="." method="_on_PurpleFlower_pressed"]

@@ -1,6 +1,5 @@
 extends Spatial
 
-const amount = 100
 const rotation_y_range = PI
 const rotation_x_range = 0.2
 const scale_range = 0.2
@@ -25,9 +24,10 @@ func _ready():
 	lower_y_c = get_y_at_x0($C, lower_y_m)
 	
 func spawn_plants():
-	var Plant = load(GameState.selected_plant)
+	var plant_asset = GameState.get_selected_plant_asset()
+	var Plant = load(plant_asset.path)
 	
-	for i in range(amount):
+	for i in range(plant_asset.amount):
 		var plant = Plant.instance()
 		plant.transform.origin = random_position()
 		plant.rotation = random_rotation()
