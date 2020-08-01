@@ -23,6 +23,10 @@ config/icon="res://icon.png"
 
 GameState="*res://states/GameState.gd"
 
+[display]
+
+window/dpi/allow_hidpi=true
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

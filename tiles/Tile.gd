@@ -2,6 +2,12 @@ extends Area
 
 export var tile_model_name: String
 
+var MATERIAL = {
+	empty = load("res://tiles/tile_unplanted.material"),
+	plant = load("res://tiles/tile_planted.material"),
+	hovered = load("res://tiles/tile_highlight.material")
+}
+
 var is_hovered := false
 var tile_model
 
@@ -11,7 +17,7 @@ func _ready():
 
 func _on_Tile_mouse_entered():
 	is_hovered = true
-	set_tile_material("res://tiles/tile_highlight.material")
+	set_tile_material(MATERIAL.hovered)
 	
 	if Input.is_mouse_button_pressed(BUTTON_LEFT):
 		trigger_Plant_Spawn_Area()
@@ -34,9 +40,9 @@ func trigger_Plant_Spawn_Area():
 		
 func update_tile_material_from_plant():
 	if $PlantSpawnArea.current_plant != null:
-		set_tile_material("res://tiles/tile_planted.material")
+		set_tile_material(MATERIAL.plant)
 	else:
-		set_tile_material("res://tiles/tile_unplanted.material")
+		set_tile_material(MATERIAL.empty)
 
-func set_tile_material(material: String):
-	tile_model.get_child(0).material_override = load(material)
+func set_tile_material(material: Material):
+	tile_model.get_child(0).material_override = material

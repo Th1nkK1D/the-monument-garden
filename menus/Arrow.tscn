@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://menus/arrow.glb" type="PackedScene" id=1]
+[ext_resource path="res://menus/Arrow.gd" type="Script" id=2]
+
+[node name="Arrow" type="Area"]
+script = ExtResource( 2 )
+
+[node name="arrow" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0 )
+
+[node name="CollisionPolygon" type="CollisionPolygon" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 17, 0, 0 )
+depth = 0.1
+polygon = PoolVector2Array( -0.451874, 0.886111, 0.259815, 0.96984, 0.343544, -0.0767631, 0.273769, -1.01173, 0.427273, -1.09546, -0.214645, -1.68155, -0.619331, -0.983819, -0.382101, -0.941955, -0.312328, -0.0767631 )
+[connection signal="mouse_entered" from="." to="." method="_on_Arrow_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Arrow_mouse_exited"]
