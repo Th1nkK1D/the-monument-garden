@@ -2,7 +2,8 @@ extends Node
 
 enum PLANT {
 	GRASS,
-	FLOWER_PURPLE
+	FLOWER_PURPLE,
+	SUN_FLOWER
 }
 
 const PLANT_ASSETS = {
@@ -13,6 +14,10 @@ const PLANT_ASSETS = {
 	PLANT.FLOWER_PURPLE: {
 		path = "res://plants/flower_purple.glb",
 		amount = 30
+	},
+	PLANT.SUN_FLOWER: {
+		path = "res://plants/sunflower.glb",
+		amount = 20
 	}
 }
 
