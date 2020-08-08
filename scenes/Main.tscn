@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://tiles/Tile001.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/Tile002.tscn" type="PackedScene" id=2]
@@ -10,12 +10,21 @@
 [ext_resource path="res://menus/Menu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Main.gd" type="Script" id=9]
 [ext_resource path="res://scenes/World.gd" type="Script" id=10]
+[ext_resource path="res://plants/lilypad.glb" type="PackedScene" id=11]
+[ext_resource path="res://plants/flower_purple.glb" type="PackedScene" id=12]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
 background_color = Color( 0.52549, 0.666667, 0.666667, 1 )
 ambient_light_color = Color( 0.996078, 0.992157, 0.992157, 1 )
 ambient_light_energy = 0.5
+
+[sub_resource type="CylinderMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.243137, 0.607843, 0.847059, 1 )
+metallic = 0.49
+roughness = 0.49
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 9 )
@@ -406,6 +415,34 @@ transform = Transform( -0.83147, 0, -0.55557, 0, 1, 0, 0.55557, 0, -0.83147, 0, 
 
 [node name="pillar4" parent="World/buildings" instance=ExtResource( 6 )]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0 )
+
+[node name="pond" type="Spatial" parent="World"]
+
+[node name="water" type="MeshInstance" parent="World/pond"]
+transform = Transform( 2, 0, 0, 0, 0.5, 0, 0, 0, 2, 0, 0.687912, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="lilypad" parent="World/pond" instance=ExtResource( 11 )]
+transform = Transform( -0.957752, 0, 0.287594, 0, 1, 0, -0.287594, 0, -0.957752, 1.12214, 1.20283, -0.240433 )
+
+[node name="lilypad6" parent="World/pond" instance=ExtResource( 11 )]
+transform = Transform( -0.670427, 0, 0.201316, 0, 1, 0, -0.201316, 0, -0.670427, 1.25983, 1.20283, 0.0758972 )
+
+[node name="lilypad5" parent="World/pond" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18147, 1.20284, -0.393349 )
+
+[node name="lilypad2" parent="World/pond" instance=ExtResource( 11 )]
+transform = Transform( 0.336704, 0, 1.97145, 0, 1, 0, -1.97145, 0, 0.336704, -0.943156, 1.20281, 0.0977249 )
+
+[node name="lilypad3" parent="World/pond" instance=ExtResource( 11 )]
+transform = Transform( -1.08475, 0, 0.885049, 0, 1, 0, -0.885049, 0, -1.08475, -0.611683, 1.20281, -0.372936 )
+
+[node name="lilypad4" parent="World/pond" instance=ExtResource( 11 )]
+transform = Transform( 1.3341, 0, 0.424459, 0, 1, 0, -0.424459, 0, 1.3341, 0.856613, 1.20283, 0.154255 )
+
+[node name="flower_purple" parent="World/pond" instance=ExtResource( 12 )]
+transform = Transform( 0.354993, 0, 0.934869, 0, 1, 0, -0.934869, 0, 0.354993, 1.07907, 0.515915, -0.0102005 )
 
 [node name="Control" type="Spatial" parent="."]
 
