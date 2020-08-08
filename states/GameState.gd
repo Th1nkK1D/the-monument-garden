@@ -1,6 +1,7 @@
 extends Node
 
 enum PLANT {
+	EMPTY,
 	GRASS,
 	FLOWER_PURPLE,
 	SUN_FLOWER

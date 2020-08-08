@@ -31,6 +31,13 @@ margin_top = 48.0
 margin_right = 99.0
 margin_bottom = 68.0
 text = "Sunflower"
+
+[node name="Clear" type="Button" parent="PlantOptions"]
+margin_top = 72.0
+margin_right = 99.0
+margin_bottom = 92.0
+text = "Clear"
 [connection signal="pressed" from="PlantOptions/Grass" to="." method="_on_Grass_pressed"]
 [connection signal="pressed" from="PlantOptions/PurpleFlower" to="." method="_on_PurpleFlower_pressed"]
 [connection signal="pressed" from="PlantOptions/Sunflower" to="." method="_on_Sunflower_pressed"]
+[connection signal="pressed" from="PlantOptions/Clear" to="." method="_on_Clear_pressed"]

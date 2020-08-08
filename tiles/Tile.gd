@@ -31,7 +31,10 @@ func _unhandled_input(event):
 		trigger_Plant_Spawn_Area()
 
 func trigger_Plant_Spawn_Area():
-	if $PlantSpawnArea.current_plant != GameState.selected_plant:
+	if $PlantSpawnArea.current_plant == GameState.selected_plant:
+		return
+		
+	if GameState.selected_plant != GameState.PLANT.EMPTY:
 		$PlantSpawnArea.spawn_plants()
 	else:
 		$PlantSpawnArea.clear_plants()
