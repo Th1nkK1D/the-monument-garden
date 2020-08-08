@@ -4,7 +4,7 @@ const rotation_y_range = PI
 const rotation_x_range = 0.2
 const scale_range = 0.2
 
-var plant: Node
+var plant: Node = null
 
 func _ready():
 	spawn()
@@ -22,9 +22,12 @@ func spawn():
 func cut():
 	$leaf.rotation = random_rotation()
 	$leaf.scale = random_scale()
-	
-	plant.queue_free()
+	$leaf.visible = true
 	$AnimationPlayer.play("Cut")
+	
+	if (plant != null):
+		plant.queue_free()
+		plant = null
 	
 func random_rotation():
 	var rotation_y = rand_range(-rotation_y_range, rotation_y_range)
