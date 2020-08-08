@@ -34,7 +34,7 @@ func spawn_plants():
 
 func clear_plants():
 	for plant in $Plants.get_children():
-		plant.queue_free()
+		plant.cut()
 	
 	current_plant = null
 	
