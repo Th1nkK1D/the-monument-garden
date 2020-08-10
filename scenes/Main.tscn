@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://tiles/Tile001.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/Tile002.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://scenes/World.gd" type="Script" id=10]
 [ext_resource path="res://plants/lilypad.glb" type="PackedScene" id=11]
 [ext_resource path="res://plants/flower_purple.glb" type="PackedScene" id=12]
+[ext_resource path="res://tiles/tile_unplanted.material" type="Material" id=13]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -407,14 +408,62 @@ transform = Transform( 0.980785, 0, -0.19509, 0, 1, 0, 0.19509, 0, 0.980785, 0, 
 [node name="pillar" parent="World/buildings" instance=ExtResource( 6 )]
 transform = Transform( 0.83147, 0, 0.55557, 0, 1, 0, -0.55557, 0, 0.83147, 0, 0, 0 )
 
+[node name="tile003sliced" parent="World/buildings/pillar" index="0"]
+material/0 = ExtResource( 13 )
+
+[node name="tile004sliced" parent="World/buildings/pillar" index="1"]
+material/0 = ExtResource( 13 )
+
+[node name="tile005sliced" parent="World/buildings/pillar" index="2"]
+material/0 = ExtResource( 13 )
+
+[node name="pillar1001" parent="World/buildings/pillar" index="3"]
+material/0 = ExtResource( 13 )
+
 [node name="pillar2" parent="World/buildings" instance=ExtResource( 6 )]
 transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0, 0 )
+
+[node name="tile003sliced" parent="World/buildings/pillar2" index="0"]
+material/0 = ExtResource( 13 )
+
+[node name="tile004sliced" parent="World/buildings/pillar2" index="1"]
+material/0 = ExtResource( 13 )
+
+[node name="tile005sliced" parent="World/buildings/pillar2" index="2"]
+material/0 = ExtResource( 13 )
+
+[node name="pillar1001" parent="World/buildings/pillar2" index="3"]
+material/0 = ExtResource( 13 )
 
 [node name="pillar3" parent="World/buildings" instance=ExtResource( 6 )]
 transform = Transform( -0.83147, 0, -0.55557, 0, 1, 0, 0.55557, 0, -0.83147, 0, 0, 0 )
 
+[node name="tile003sliced" parent="World/buildings/pillar3" index="0"]
+material/0 = ExtResource( 13 )
+
+[node name="tile004sliced" parent="World/buildings/pillar3" index="1"]
+material/0 = ExtResource( 13 )
+
+[node name="tile005sliced" parent="World/buildings/pillar3" index="2"]
+material/0 = ExtResource( 13 )
+
+[node name="pillar1001" parent="World/buildings/pillar3" index="3"]
+material/0 = ExtResource( 13 )
+
 [node name="pillar4" parent="World/buildings" instance=ExtResource( 6 )]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0 )
+
+[node name="tile003sliced" parent="World/buildings/pillar4" index="0"]
+material/0 = ExtResource( 13 )
+
+[node name="tile004sliced" parent="World/buildings/pillar4" index="1"]
+material/0 = ExtResource( 13 )
+
+[node name="tile005sliced" parent="World/buildings/pillar4" index="2"]
+material/0 = ExtResource( 13 )
+
+[node name="pillar1001" parent="World/buildings/pillar4" index="3"]
+material/0 = ExtResource( 13 )
 
 [node name="pond" type="Spatial" parent="World"]
 
@@ -453,3 +502,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0 )
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0 )
 [connection signal="is_clicked" from="Control/ArrowAntiClockWise" to="." method="_on_ArrowAntiClockWise_is_clicked"]
 [connection signal="is_clicked" from="Control/ArrowClockWise" to="." method="_on_ArrowClockWise_is_clicked"]
+
+[editable path="World/buildings/pillar"]
+
+[editable path="World/buildings/pillar2"]
+
+[editable path="World/buildings/pillar3"]
+
+[editable path="World/buildings/pillar4"]
