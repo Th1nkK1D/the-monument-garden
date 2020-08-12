@@ -1,43 +1,80 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://menus/Menu.gd" type="Script" id=2]
+[ext_resource path="res://menus/icon-purple-flower.png" type="Texture" id=1]
+[ext_resource path="res://menus/icon-sunflower-active.png" type="Texture" id=2]
+[ext_resource path="res://menus/icon-purple-flower-active.png" type="Texture" id=3]
+[ext_resource path="res://menus/icon-purple-flower-hovered.png" type="Texture" id=4]
+[ext_resource path="res://menus/icon-grass.png" type="Texture" id=5]
+[ext_resource path="res://menus/icon-grass-hovered.png" type="Texture" id=6]
+[ext_resource path="res://menus/icon-grass-active.png" type="Texture" id=7]
+[ext_resource path="res://menus/PlantButton.gd" type="Script" id=8]
+[ext_resource path="res://menus/icon-sunflower-hover.png" type="Texture" id=9]
+[ext_resource path="res://menus/icon-sunflower.png" type="Texture" id=10]
+[ext_resource path="res://menus/icon-shovel.png" type="Texture" id=11]
+[ext_resource path="res://menus/icon-shovel-hover.png" type="Texture" id=12]
+[ext_resource path="res://menus/icon-shovel-active.png" type="Texture" id=13]
 
 [node name="Menu" type="CanvasLayer"]
-script = ExtResource( 2 )
 
-[node name="PlantOptions" type="VBoxContainer" parent="."]
-anchor_left = 1.0
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_top = 1.0
 anchor_right = 1.0
-margin_top = 20.0
-margin_right = -20.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+margin_top = -96.0
+margin_bottom = -32.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Grass" type="Button" parent="PlantOptions"]
-margin_right = 99.0
-margin_bottom = 20.0
-text = "Grass"
+[node name="PlantOptions" type="HBoxContainer" parent="CenterContainer"]
+margin_left = 378.0
+margin_right = 646.0
+margin_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="PurpleFlower" type="Button" parent="PlantOptions"]
-margin_top = 24.0
-margin_right = 99.0
-margin_bottom = 44.0
-text = "Purple Flower"
+[node name="Shovel" type="TextureButton" parent="CenterContainer/PlantOptions"]
+margin_right = 64.0
+margin_bottom = 64.0
+toggle_mode = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 12 )
+script = ExtResource( 8 )
 
-[node name="Sunflower" type="Button" parent="PlantOptions"]
-margin_top = 48.0
-margin_right = 99.0
-margin_bottom = 68.0
-text = "Sunflower"
+[node name="Grass" type="TextureButton" parent="CenterContainer/PlantOptions"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+toggle_mode = true
+pressed = true
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
+script = ExtResource( 8 )
+plant_type = 1
 
-[node name="Clear" type="Button" parent="PlantOptions"]
-margin_top = 72.0
-margin_right = 99.0
-margin_bottom = 92.0
-text = "Clear"
-[connection signal="pressed" from="PlantOptions/Grass" to="." method="_on_Grass_pressed"]
-[connection signal="pressed" from="PlantOptions/PurpleFlower" to="." method="_on_PurpleFlower_pressed"]
-[connection signal="pressed" from="PlantOptions/Sunflower" to="." method="_on_Sunflower_pressed"]
-[connection signal="pressed" from="PlantOptions/Clear" to="." method="_on_Clear_pressed"]
+[node name="PurpleFlower" type="TextureButton" parent="CenterContainer/PlantOptions"]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+toggle_mode = true
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+script = ExtResource( 8 )
+plant_type = 2
+
+[node name="Sunflower" type="TextureButton" parent="CenterContainer/PlantOptions"]
+margin_left = 204.0
+margin_right = 268.0
+margin_bottom = 64.0
+toggle_mode = true
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 9 )
+script = ExtResource( 8 )
+plant_type = 3
