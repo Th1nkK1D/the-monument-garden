@@ -6,7 +6,7 @@
   "author": "Th1nkK1D <witheep@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "godot --export HTML5 ./dist/index.html",
+    "build": "godot --export HTML5 ./dist/index.html && cp preview-image.png dist/preview-image.png",
     "serve": "http-server dist",
     "deploy": "gh-pages -d dist"
   },

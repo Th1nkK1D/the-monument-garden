@@ -15,7 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="the Garden Monument"
+config/name="The Garden Monument"
+config/description="Chilling with gardening game on the abandoned monument"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
