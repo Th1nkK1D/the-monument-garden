@@ -4,6 +4,7 @@ enum PLANT {
 	EMPTY,
 	GRASS,
 	FLOWER_PURPLE,
+	FLOWER_BLUE,
 	SUN_FLOWER
 }
 
@@ -14,6 +15,10 @@ const PLANT_ASSETS = {
 	},
 	PLANT.FLOWER_PURPLE: {
 		path = "res://plants/flower_purple.glb",
+		amount = 30
+	},
+	PLANT.FLOWER_BLUE: {
+		path = "res://plants/flower_blue.glb",
 		amount = 30
 	},
 	PLANT.SUN_FLOWER: {
