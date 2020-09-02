@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gardenMonument.ogg-59fb63afe630885c473c85b3eb603d4d.oggstr"
+
+[deps]
+
+source_file="res://audios/gardenMonument.ogg"
+dest_files=[ "res://.import/gardenMonument.ogg-59fb63afe630885c473c85b3eb603d4d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

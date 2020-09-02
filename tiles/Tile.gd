@@ -35,14 +35,16 @@ func trigger_Plant_Spawn_Area():
 		return
 		
 	if GameState.selected_plant != GameState.PLANT.EMPTY:
+		$PlantSound.play()
 		$PlantSpawnArea.spawn_plants()
 	else:
+		$CutSound.play()
 		$PlantSpawnArea.clear_plants()
 	
 	update_tile_material_from_plant()
 		
 func update_tile_material_from_plant():
-	if $PlantSpawnArea.current_plant != null:
+	if $PlantSpawnArea.current_plant != GameState.PLANT.EMPTY:
 		set_tile_material(MATERIAL.plant)
 	else:
 		set_tile_material(MATERIAL.empty)

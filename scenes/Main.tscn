@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://tiles/Tile001.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/Tile002.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://scenes/World.gd" type="Script" id=10]
 [ext_resource path="res://plants/lilypad.glb" type="PackedScene" id=11]
 [ext_resource path="res://plants/flower_purple.glb" type="PackedScene" id=12]
+[ext_resource path="res://audios/gardenMonument.ogg" type="AudioStream" id=13]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -451,5 +452,10 @@ transform = Transform( 0.931368, 0, 0.36408, 0, 1, 0, -0.36408, 0, 0.931368, -6.
 
 [node name="ArrowClockWise" parent="Control" instance=ExtResource( 7 )]
 transform = Transform( -0.931368, 0, 0.36408, 0, 1, 0, 0.36408, 0, 0.931368, 6.51957, 0, -2.54856 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -20.0
+autoplay = true
 [connection signal="is_clicked" from="Control/ArrowAntiClockWise" to="." method="_on_ArrowAntiClockWise_is_clicked"]
 [connection signal="is_clicked" from="Control/ArrowClockWise" to="." method="_on_ArrowClockWise_is_clicked"]

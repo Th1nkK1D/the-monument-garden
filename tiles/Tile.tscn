@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://audios/bubble.ogg" type="AudioStream" id=1]
 [ext_resource path="res://tiles/Tile.gd" type="Script" id=2]
 [ext_resource path="res://plants/PlantSpawnArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://audios/grass-cut.ogg" type="AudioStream" id=4]
 
 [node name="Tile" type="Area"]
 script = ExtResource( 2 )
@@ -13,5 +15,12 @@ polygon = PoolVector2Array( -2.06435, 0.080169, -1.90401, 0.741564, -2.74579, 1.
 
 [node name="PlantSpawnArea" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.977673, 0, 0.21013, 0, 1, 0, -0.21013, 0, 0.977673, -2.41042, 1.38471, 0.502598 )
+
+[node name="PlantSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="CutSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.0
 [connection signal="mouse_entered" from="." to="." method="_on_Tile_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Tile_mouse_exited"]

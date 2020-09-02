@@ -6,7 +6,7 @@ var upper_y_m: float
 var upper_y_c: float
 var lower_y_m: float
 var lower_y_c: float
-var current_plant = null
+var current_plant = GameState.PLANT.EMPTY
 
 func _ready():
 	min_x = $A.transform.origin.x
@@ -19,7 +19,7 @@ func _ready():
 	lower_y_c = get_y_at_x0($C, lower_y_m)
 	
 func spawn_plants():
-	if current_plant != null:
+	if current_plant != GameState.PLANT.EMPTY:
 		clear_plants()
 		
 	var plant_asset = GameState.get_selected_plant_asset()
@@ -36,7 +36,7 @@ func clear_plants():
 	for plant in $Plants.get_children():
 		plant.cut()
 	
-	current_plant = null
+	current_plant = GameState.PLANT.EMPTY
 	
 func get_slope(A: Position3D, B: Position3D):
 	return (B.transform.origin.z - A.transform.origin.z) / (B.transform.origin.x - A.transform.origin.x)

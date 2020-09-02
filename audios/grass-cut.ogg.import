@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/grass-cut.ogg-da5fb6a0c8c0054c876d2d3f97143d8f.oggstr"
+
+[deps]
+
+source_file="res://audios/grass-cut.ogg"
+dest_files=[ "res://.import/grass-cut.ogg-da5fb6a0c8c0054c876d2d3f97143d8f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
